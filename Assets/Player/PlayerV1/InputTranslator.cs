@@ -25,19 +25,19 @@
             switch (data.myInputKey)
             {
                 case InputKey.Up:
-                    DebugHelper.Log("Getting Up Key");
+                    //DebugHelper.Log("Getting Up Key");
                     EventManager.TriggerEvent(new EventRequestPlayerMove(new EventRequestPlayerMove.Data(new Vector2(0, 1))));
                     return true;
                 case InputKey.Down:
-                    DebugHelper.Log("Getting Down Key");
+                    //DebugHelper.Log("Getting Down Key");
                     EventManager.TriggerEvent(new EventRequestPlayerMove(new EventRequestPlayerMove.Data(new Vector2(0, -1))));
                     return true;
                 case InputKey.Right:
-                    DebugHelper.Log("Getting Right Key");
+                    //DebugHelper.Log("Getting Right Key");
                     EventManager.TriggerEvent(new EventRequestPlayerMove(new EventRequestPlayerMove.Data(new Vector2(1, 0))));
                     return true;
                 case InputKey.Left:
-                    DebugHelper.Log("Getting Left Key");
+                    //DebugHelper.Log("Getting Left Key");
                     EventManager.TriggerEvent(new EventRequestPlayerMove(new EventRequestPlayerMove.Data(new Vector2(-1, 0))));
                     return true;
                 case InputKey.MainButton1:
