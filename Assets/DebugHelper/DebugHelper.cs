@@ -10,7 +10,7 @@
         [SerializeField]
         private static bool ShouldDebug = true;
 
-        public static void DebugHelperLog (string log)
+        public static void Log (string log)
         {
 #if UNITY_EDITOR
             if (ShouldDebug)
