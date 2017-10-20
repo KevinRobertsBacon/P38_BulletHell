@@ -1,10 +1,5 @@
 ﻿namespace P38
 {
-
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-
     public class EventOnInputRecieved : IEvent
     {
         public const string EventName = "EventOnInputRecieved";
@@ -21,24 +16,33 @@
 
     }
 
+    public enum InputKey
+    {
+        Up,
+        Down,
+        Right,
+        Left,
+        Horizontal,
+        MainButton1,
+        MainButton2,
+    }
+
+    public enum InputType
+    {
+        Hold,
+        Down,
+        Up
+    }
+
     public class InputData
     {
-        public enum Input
-        {
-            Up,
-            Down,
-            Right,
-            Left,
-            Horizontal,
-            MainButton1,
-            MainButton2,
-        }
+        public InputKey myInputKey;
+        public InputType myInputType;
 
-        public enum InputType
+        public InputData(InputKey inputkey, InputType inputType)
         {
-            Hold,
-            Down,
-            Up
+            myInputKey = inputkey;
+            myInputType = inputType;
         }
     }
 }

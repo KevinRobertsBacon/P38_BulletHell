@@ -12,14 +12,37 @@
             string evtName = evt.GetName();
             switch (evtName)
             {
-
+                case EventOnInputRecieved.EventName:
+                    var data = (InputData)evt.GetData();
+                    ParseInputData(data);
+                    return ListenerResult.Handled;
             }
             return ListenerResult.Ignored;
         }
 
+        bool ParseInputData(InputData data)
+        {
+            switch (data.myInputKey)
+            {
+                case InputKey.Up:
+                    return true;
+                case InputKey.Down:
+                    return true;
+                case InputKey.Right:
+                    return true;
+                case InputKey.Left:
+                    return true;
+                case InputKey.MainButton1:
+                    return true;
+                case InputKey.MainButton2:
+                    return true;
+            }
+            return false;
+        }
+
         public void Subscribe(SubscribeMode mode)
         {
-            throw new System.NotImplementedException();
+            EventManager.ManageSubscriber(mode, this, EventOnInputRecieved.EventName);
         }
 
         private void Awake()
