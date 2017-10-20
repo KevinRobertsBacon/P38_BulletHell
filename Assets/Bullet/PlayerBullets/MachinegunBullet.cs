@@ -6,6 +6,9 @@
 
     public class MachinegunBullet : PlayerBullet_Base
     {
-        
+        protected override void ExecuteMovement()
+        {
+            transform.position += transform.up * speed * Time.deltaTime;
+        }
     }
 }

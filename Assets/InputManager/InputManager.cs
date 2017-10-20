@@ -31,14 +31,14 @@
             {
                 EventManager.TriggerEvent(new EventOnInputRecieved(new InputData(InputKey.Left, InputType.Hold)));
             }
-#endregion
-
-            //this region is for the get button down events.
-#region GET_BUTTON_DOWN
-            if (Input.GetButtonDown("MainButton1"))
+            if (Input.GetButton("MainButton1"))
             {
                 EventManager.TriggerEvent(new EventOnInputRecieved(new InputData(InputKey.MainButton1, InputType.Down)));
             }
+#endregion
+
+            //this region is for the get button down events.
+            #region GET_BUTTON_DOWN
             if (Input.GetButtonDown("MainButton2"))
             {
                 EventManager.TriggerEvent(new EventOnInputRecieved(new InputData(InputKey.MainButton2, InputType.Down)));

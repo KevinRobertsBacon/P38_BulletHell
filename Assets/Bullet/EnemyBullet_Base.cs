@@ -6,6 +6,9 @@
 
     public class EnemyBullet_Base : Bullet_Base
     {
-        
+        protected override void ExecuteMovement()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

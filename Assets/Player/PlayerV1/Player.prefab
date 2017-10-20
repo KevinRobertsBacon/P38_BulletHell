@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4920927006442688}
-  - component: {fileID: 114242711245107184}
+  - component: {fileID: 114896978316734438}
   m_Layer: 8
   m_Name: PlayerWeapon
   m_TagString: Untagged
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &114242711245107184
+--- !u!114 &114896978316734438
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class PlayerBullet_Base : Bullet_Base
+    public abstract class PlayerBullet_Base : Bullet_Base
     {
-        
+
     }
 }

@@ -10,7 +10,11 @@
 
         [SerializeField]
         private float fireRate = .5f;
-        private float FireRate { get { return fireRate; } }
+        public float FireRate { get { return fireRate; } }
+
+        [SerializeField]
+        private PlayerBullet_Base bullet;
+        public PlayerBullet_Base Bullet { get { return bullet; } }
 
     }
 }

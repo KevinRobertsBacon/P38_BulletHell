@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class InputTranslator : MonoBehaviour, IEventListener
+    public class PlayerInputTranslator : MonoBehaviour, IEventListener
     {
         public ListenerResult HandleEvent(IEvent evt)
         {
@@ -41,7 +41,8 @@
                     EventManager.TriggerEvent(new EventRequestPlayerMove(new EventRequestPlayerMove.Data(new Vector2(-1, 0))));
                     return true;
                 case InputKey.MainButton1:
-                    DebugHelper.Log("Getting Main Button 1 Key");
+                    //DebugHelper.Log("Getting Main Button 1 Key");
+                    EventManager.TriggerEvent(new EventRequestPrimaryWeaponFire());
                     return true;
                 case InputKey.MainButton2:
                     DebugHelper.Log("Getting Main Button 2 Key");
