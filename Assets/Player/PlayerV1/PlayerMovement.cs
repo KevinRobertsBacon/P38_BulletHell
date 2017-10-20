@@ -9,6 +9,9 @@
         [SerializeField]
         private float speed = 2f;
 
+        [SerializeField]
+        private Vector2 playerExtants = new Vector2(9.5f, 9.5f);
+
         public ListenerResult HandleEvent(IEvent evt)
         {
             string evtName = evt.GetName();
@@ -32,7 +35,10 @@
 
         bool ValidateNewPosition(Vector3 position)
         {
-            return true;
+            if (position.x > -playerExtants.x && position.x < playerExtants.x && position.y > -playerExtants.y && position.y < playerExtants.y)
+                return true;
+            else
+                return false;
         }
 
         public void Subscribe(SubscribeMode mode)
