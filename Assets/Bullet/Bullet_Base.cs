@@ -44,15 +44,17 @@
             }
             else
             {
-                BulletCollision();
+                BulletCollision(collision.gameObject);
                 Destroy(this.gameObject);
             }
             
         }
 
-        protected virtual void BulletCollision()
+        protected virtual void BulletCollision(GameObject hitObj)
         {
-
+            Enemy hitEnemy = hitObj.GetComponent<Enemy>();
+            if (hitEnemy != null)
+                hitEnemy.DealDamage(damage);
         }
     }
 }

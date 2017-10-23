@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4571436cd38b64588be9f125e98da4, type: 3}
   m_Name: BasicMachineGun
   m_EditorClassIdentifier: 
-  fireRate: 0.1
+  fireRate: 0.05
   bullet: {fileID: 114291806732841644, guid: 5481576fdee4a6f4ea0034ce2e9bf16b, type: 2}
