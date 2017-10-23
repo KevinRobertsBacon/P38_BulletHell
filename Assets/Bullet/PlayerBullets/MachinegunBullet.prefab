@@ -133,4 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 1
+  triggerLayersToIgnore:
+    serializedVersion: 2
+    m_Bits: 256
   destroyCondition: 1
