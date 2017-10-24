@@ -21,6 +21,10 @@
                     var data = (EventRequestPlayerMove.Data)evt.GetData();
                     HandleMovement(data.Movement);
                     return ListenerResult.Handled;
+                case EventGetPlayerTransform.EventName:
+                    var castedEvent = (EventGetPlayerTransform)evt;
+                    castedEvent.playerTransform = transform;
+                    return ListenerResult.Handled;
             }
             return ListenerResult.Ignored;
         }
@@ -44,6 +48,7 @@
         public void Subscribe(SubscribeMode mode)
         {
             EventManager.ManageSubscriber(mode, this, EventRequestPlayerMove.EventName);
+            EventManager.ManageSubscriber(mode, this, EventGetPlayerTransform.EventName);
         }
 
         private void Awake()
@@ -80,5 +85,18 @@
                 Movement = movement;
             }
         }
+    }
+
+    public class EventGetPlayerTransform : IEvent
+    {
+        public const string EventName = "EventGetPlayerTransform";
+        string IEvent.GetName() { return EventName; }
+
+        public object GetData()
+        {
+            return playerTransform;
+        }
+
+        public Transform playerTransform;
     }
 }

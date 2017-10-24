@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4380239189243176}
   - component: {fileID: 114284479295880574}
   m_Layer: 0
-  m_Name: TestEnemySpawner
+  m_Name: Spawner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,6 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesToSpawn:
-  - {fileID: 114262711476829580, guid: 799d6989074c9b84190b9b855f6dc2fe, type: 2}
+  - {fileID: 114262711476829580, guid: 67ccf752d9f59dc4dba40f8a1d339144, type: 2}
   Spawnrate: 1
   numOfEnemiesInWave: 5
