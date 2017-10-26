@@ -6,6 +6,10 @@
 
     public class EnemyWaveSpawner : MonoBehaviour
     {
+        public enum SpawnTrigger { Camera, SetHeight}
+        [SerializeField]
+        private SpawnTrigger spawnTrigger;
+
         [SerializeField]
         private List<Enemy> enemiesToSpawn = new List<Enemy>();
 
@@ -17,13 +21,26 @@
         [SerializeField]
         private int numOfEnemiesInWave = 5;
 
+        [Space(10f)]
+        [SerializeField]
+        private float heightForSpawning = 7.5f;
+
         private void Update()
         {
             //todo make a smarter instigator... maybe.
             if (!spawned)
             {
-                if (transform.position.y < Camera.main.orthographicSize)
-                    BuildWave();
+                switch (spawnTrigger)
+                {
+                    case SpawnTrigger.Camera:
+                        if (transform.position.y < Camera.main.orthographicSize)
+                            BuildWave();
+                        break;
+                    case SpawnTrigger.SetHeight:
+                        if (transform.position.y < heightForSpawning)
+                            BuildWave();
+                        break;
+                }
             }
         }
 

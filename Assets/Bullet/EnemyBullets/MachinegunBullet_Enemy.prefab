@@ -135,5 +135,5 @@ MonoBehaviour:
   damage: 1
   triggerLayersToIgnore:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   destroyCondition: 0

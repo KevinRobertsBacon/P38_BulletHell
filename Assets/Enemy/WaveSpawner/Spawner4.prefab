@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4380239189243176}
   - component: {fileID: 114284479295880574}
   m_Layer: 0
-  m_Name: Spawner2
+  m_Name: Spawner4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930df93749721144abbfa17596c67bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTrigger: 0
+  spawnTrigger: 1
   enemiesToSpawn:
-  - {fileID: 114262711476829580, guid: 67ccf752d9f59dc4dba40f8a1d339144, type: 2}
-  Spawnrate: 1
+  - {fileID: 114245050050176932, guid: d04943d7d1f5e88409398d1d17a846e6, type: 2}
+  Spawnrate: 0.75
   numOfEnemiesInWave: 5
   heightForSpawning: 7.5

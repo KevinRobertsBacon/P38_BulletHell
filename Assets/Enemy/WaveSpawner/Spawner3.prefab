@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4380239189243176}
   - component: {fileID: 114284479295880574}
   m_Layer: 0
-  m_Name: Spawner2
+  m_Name: Spawner3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673249698643728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTrigger: 0
   enemiesToSpawn:
-  - {fileID: 114262711476829580, guid: 67ccf752d9f59dc4dba40f8a1d339144, type: 2}
+  - {fileID: 114245050050176932, guid: 627f06a4856cbb64185764e3c46bdef3, type: 2}
   Spawnrate: 1
   numOfEnemiesInWave: 5
   heightForSpawning: 7.5

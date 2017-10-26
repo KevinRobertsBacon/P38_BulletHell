@@ -19,7 +19,15 @@
             else
             {
                 DebugHelper.Log("We hit something, let's do something about it.");
+                EventManager.TriggerEvent(new EventOnPlayerCollision());
             }
         }
+    }
+
+    public class EventOnPlayerCollision : IEvent
+    {
+        public const string EventName = "EventOnPlayerCollision";
+        string IEvent.GetName() { return EventName; }
+        object IEvent.GetData() { return null; }
     }
 }

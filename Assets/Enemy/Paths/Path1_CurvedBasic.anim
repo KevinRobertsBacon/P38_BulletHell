@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CurvedBasicPath2
+  m_Name: Path1_CurvedBasic
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -25,13 +25,13 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 2.5
-        value: {x: 3, y: -15, z: 0}
-        inSlope: {x: 1.2, y: 0, z: 0}
-        outSlope: {x: 1.2, y: 0, z: 0}
+        value: {x: -3, y: -15, z: 0}
+        inSlope: {x: -1.2, y: 0, z: 0}
+        outSlope: {x: -1.2, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 5
-        value: {x: 6, y: 0, z: 0}
+        value: {x: -6, y: 0, z: 0}
         inSlope: {x: 0, y: 5.1441436, z: 0}
         outSlope: {x: 0, y: 5.1441436, z: 0}
         tangentMode: 0
@@ -89,13 +89,13 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 2.5
-        value: 3
-        inSlope: 1.2
-        outSlope: 1.2
+        value: -3
+        inSlope: -1.2
+        outSlope: -1.2
         tangentMode: 136
       - serializedVersion: 2
         time: 5
-        value: 6
+        value: -6
         inSlope: 0
         outSlope: 0
         tangentMode: 136
