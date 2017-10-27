@@ -24,11 +24,22 @@
         {
             yield return new WaitForSeconds(timeBetweenShots);
             int counter = 0;
-            while (counter < numOfShots)
+            if (numOfShots != 0)
             {
-                counter++;
-                FireWeapon();
-                yield return new WaitForSeconds(timeBetweenShots);
+                while (counter < numOfShots)
+                {
+                    counter++;
+                    FireWeapon();
+                    yield return new WaitForSeconds(timeBetweenShots);
+                }
+            }
+            else
+            {
+                while (counter == 0)
+                {
+                    FireWeapon();
+                    yield return new WaitForSeconds(timeBetweenShots);
+                }
             }
         }
 

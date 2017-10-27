@@ -44,6 +44,12 @@
             }
         }
 
+        void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(0, 1, 0, 0.5f);
+            Gizmos.DrawSphere(transform.position, .5f);
+        }
+
         void BuildWave()
         {
             spawned = true;
@@ -84,6 +90,11 @@
                 spawnedEnemy.transform.parent = offsetter.transform;
                 spawnedEnemy.StartMovement();
                 yield return new WaitForSeconds(Spawnrate);
+            }
+            if (offsetter.transform.childCount == 0)
+            {
+                Destroy(offsetter);
+                Destroy(this.gameObject);
             }
         }
     }

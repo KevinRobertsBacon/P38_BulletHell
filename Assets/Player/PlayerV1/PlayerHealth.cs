@@ -9,8 +9,23 @@
     {
         [SerializeField]
         private int MaxHealth = 100;
+
+
         [SerializeField]
         private int currentHealth = 100;
+
+        public int CurrentHealth
+        {
+            get
+            {
+                return currentHealth;
+            }
+            set
+            {
+                currentHealth = value;
+                EventManager.TriggerEvent(new EventOnPlayerHealthValueChange(currentHealth));
+            }
+        }
 
         private const int tickInterval = 1;
 
@@ -24,13 +39,26 @@
                 case EventOnPlayerCollision.EventName:
                     TakeDamage();
                     return ListenerResult.Handled;
+                case EventRequestPlayerDeath.EventName:
+                    PlayerDeath();
+                    return ListenerResult.Handled;
+                case EventGetPlayerHealthMaxValue.EventName:
+                    var getter = (EventGetPlayerHealthMaxValue)evt;
+                    getter.maxHealth = MaxHealth;
+                    return ListenerResult.Handled;
             }
             return ListenerResult.Ignored;
         }
 
         private void TakeDamage()
         {
-            currentHealth -= DAMAGE;
+            CurrentHealth -= DAMAGE;
+        }
+
+        private void PlayerDeath()
+        {
+            EventManager.TriggerEvent(new EventOnPlayerDeath());
+            Destroy(this.gameObject);
         }
 
         float counter = 0;
@@ -44,13 +72,15 @@
             else
             {
                 counter = 0;
-                currentHealth -= tickInterval;
+                CurrentHealth -= tickInterval;
             }
         }
 
         public void Subscribe(SubscribeMode mode)
         {
             EventManager.ManageSubscriber(mode, this, EventOnPlayerCollision.EventName);
+            EventManager.ManageSubscriber(mode, this, EventRequestPlayerDeath.EventName);
+            EventManager.ManageSubscriber(mode, this, EventGetPlayerHealthMaxValue.EventName);
         }
 
         private void Awake()
@@ -62,5 +92,37 @@
         {
             Subscribe(SubscribeMode.Unsubscribe);
         }
+    }
+
+    public class EventOnPlayerHealthValueChange : IEvent
+    {
+        public const string EventName = "EventOnPlayerHealthValueChange";
+        string IEvent.GetName() { return EventName; }
+
+        private float newHealth;
+
+        public EventOnPlayerHealthValueChange (float _newHealth)
+        {
+            newHealth = _newHealth;
+        }
+
+        object IEvent.GetData() { return newHealth; }
+    }
+
+    public class EventGetPlayerHealthMaxValue : IEvent
+    {
+        public const string EventName = "EventGetPlayerHealthMaxValue";
+        string IEvent.GetName() { return EventName; }
+
+        public float maxHealth = 0;
+
+        object IEvent.GetData() { return maxHealth; }
+    }
+
+    public class EventOnPlayerDeath : IEvent
+    {
+        public const string EventName = "EventOnPlayerDeath";
+        string IEvent.GetName() { return EventName; }
+        object IEvent.GetData() { return null; }
     }
 }
