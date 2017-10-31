@@ -12,6 +12,37 @@
         [SerializeField]
         private Vector2 playerExtants = new Vector2(9.5f, 9.5f);
 
+        [SerializeField]
+        private Transform playerMeshTransform;
+
+        [SerializeField]
+        private Vector2 meshTilt;
+
+
+        Vector3 lastPos;
+        Vector3 currentPos;
+        Vector3 difference;
+
+        private void Update()
+        {
+            currentPos = transform.position;
+            difference = (currentPos - lastPos);
+
+            if (difference.x > 0)
+                difference.x *= -1 / difference.x;
+            else if (difference.x < 0)
+                difference.x *= 1 / difference.x;
+
+            if (difference.y > 0)
+                difference.y *= 1 / difference.y;
+            if (difference.y < 0)
+                difference.y *= -1 / difference.y;
+
+            playerMeshTransform.localRotation = Quaternion.Euler(meshTilt.x * difference.y, meshTilt.y * difference.x, 0);
+
+            lastPos = transform.position;
+        }
+
         public ListenerResult HandleEvent(IEvent evt)
         {
             string evtName = evt.GetName();
@@ -54,6 +85,8 @@
         private void Awake()
         {
             Subscribe(SubscribeMode.Subscribe);
+
+            lastPos = transform.position;
         }
 
         private void OnDestroy()

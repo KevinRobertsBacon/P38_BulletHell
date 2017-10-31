@@ -14,11 +14,11 @@
             if (((1<<collision.gameObject.layer) & triggerLayersToIgnore) != 0)
             {
                 //we hit an ignore layer
-                DebugHelper.Log("We hit Something, but let's ignore it.");
+                //DebugHelper.Log("We hit Something, but let's ignore it.");
             }
             else
             {
-                DebugHelper.Log("We hit something, let's do something about it.");
+                //DebugHelper.Log("We hit something, let's do something about it.");
                 EventManager.TriggerEvent(new EventOnPlayerCollision());
             }
         }

@@ -29,7 +29,7 @@
             switch (destroyCondition)
             {
                 case DestroyCondition.Camera:
-                    if (transform.position.y > Camera.main.orthographicSize)
+                    if (transform.position.y > Camera.main.orthographicSize || transform.position.y < -Camera.main.orthographicSize)
                         Destroy(this.gameObject);
                     break;
             }
@@ -40,7 +40,7 @@
             if (((1 << collision.gameObject.layer) & triggerLayersToIgnore) != 0)
             {
                 //we hit an ignore layer
-                DebugHelper.Log("Bullet hit Something, but let's ignore it.");
+                //DebugHelper.Log("Bullet hit Something, but let's ignore it.");
             }
             else
             {

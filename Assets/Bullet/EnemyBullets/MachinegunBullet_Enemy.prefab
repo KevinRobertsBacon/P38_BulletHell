@@ -136,4 +136,4 @@ MonoBehaviour:
   triggerLayersToIgnore:
     serializedVersion: 2
     m_Bits: 1536
-  destroyCondition: 0
+  destroyCondition: 1
